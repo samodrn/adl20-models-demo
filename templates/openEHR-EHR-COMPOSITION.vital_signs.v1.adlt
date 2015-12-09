@@ -44,6 +44,7 @@ definition
     COMPOSITION[id1.1] matches {    -- Encounter
         content matches {
             use_archetype OBSERVATION[id0.2, openEHR-EHR-OBSERVATION.ovl-vital_signs-blood_pressure-001.v1.0.0]
+            use_archetype OBSERVATION[id0.3, openEHR-EHR-OBSERVATION.ovl-vital_signs-body_temperature-001.v1.0.0]
         }
     }
 
@@ -110,6 +111,39 @@ terminology
             ["id1.1"] = <
                 text = <"*Blood Pressure(en)">
                 description = <"*The local measurement of arterial blood pressure which is a surrogate for arterial. pressure in the systemic circulation.  Most commonly, use of the term 'blood pressure' refers to measurement of brachial artery pressure in the upper arm.(en)">
+            >
+        >
+    >
+
+
+---------------------------------------------------------------------------------
+template_overlay
+    openEHR-EHR-OBSERVATION.ovl-vital_signs-body_temperature-001.v1.0.0
+
+specialize
+    openEHR-EHR-OBSERVATION.body_temperature.v1.0.0
+
+definition
+    OBSERVATION[id1.1]     -- Body temperature
+
+terminology
+    term_definitions = <
+        ["en"] = <
+            ["id1.1"] = <
+                text = <"Body temperature">
+                description = <"A measurement of the body temperature, which is a surrogate for the whole body temperature of the person.">
+            >
+        >
+        ["de"] = <
+            ["id1.1"] = <
+                text = <"Körpertemperatur">
+                description = <"Eine Messung der Körpertemperatur an einer bestimmten Stelle als Surrogat für den gesamten Körper der Person.">
+            >
+        >
+        ["sl"] = <
+            ["id1.1"] = <
+                text = <"Telesna temperatura">
+                description = <"*A measurement of the body temperature, which is a surrogate for the whole body temperature of the person.(en)">
             >
         >
     >
