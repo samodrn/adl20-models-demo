@@ -4,6 +4,6 @@
     "rmType" : "COMPOSITION",
     "name" : "Encounter",
     "path" : "templates/openEHR-EHR-COMPOSITION.vital_signs.v1.adlt",
-    "sha" : "7ca3f91b4d9b89b6b2ae24540f9cd91394da4fa4"
+    "sha" : "e067c475f80f3b818e1eba2199b7c766c62052a4"
   } ]
 }
