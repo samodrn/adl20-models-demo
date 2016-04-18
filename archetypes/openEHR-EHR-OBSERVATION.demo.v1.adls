@@ -1,0 +1,96 @@
+archetype (adl_version=2.0.4; rm_release=1.0.2)
+    openEHR-EHR-OBSERVATION.demo.v1.0.0
+
+language
+    original_language = <[ISO_639-1::en]>
+    
+description
+    copyright = <"">
+    details = <
+        ["en"] = <
+            language = <[ISO_639-1::en]>
+            purpose = <"">
+        >
+    >
+    lifecycle_state = <"unmanaged">
+
+definition
+    OBSERVATION[id1] matches {    -- demo
+        data matches {
+            HISTORY[id2] matches {
+                events matches {
+                    EVENT[id3] matches {    -- Any event
+                        data matches {
+                            ITEM_TREE[id4] matches {
+                                items matches {
+                                    ELEMENT[id7] matches {    -- Measurment 1
+                                        value matches {
+                                            DV_TEXT[id8] 
+                                        }
+                                    }
+                                    ELEMENT[id10] matches {    -- Measurement 2
+                                        value matches {
+                                            DV_CODED_TEXT[id11] 
+                                        }
+                                    }
+                                    ELEMENT[id13] matches {    -- M3
+                                        value matches {
+                                            DV_BOOLEAN[id14] 
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        state matches {
+                            ITEM_TREE[id5] 
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+terminology
+    term_definitions = <
+        ["en"] = <
+            ["id1"] = <
+                text = <"demo">
+                description = <"demo">
+            >
+            ["id3"] = <
+                text = <"Any event">
+                description = <"Any event">
+            >
+            ["id7"] = <
+                text = <"Measurment 1">
+                description = <"DV_TEXT">
+            >
+            ["id10"] = <
+                text = <"Measurement 2">
+                description = <"DV_TEXT">
+            >
+            ["at1"] = <
+                text = <"Value 1">
+                description = <"Value 1">
+            >
+            ["at2"] = <
+                text = <"Values 2">
+                description = <"Values 2">
+            >
+            ["ac1"] = <
+                text = <"Measurement values">
+                description = <"Measruement valkues">
+            >
+            ["id13"] = <
+                text = <"M3">
+                description = <"DV_TEXT">
+            >
+        >
+    >
+    value_sets = <
+        ["ac1"] = <
+            id = <"ac1">
+            members = <"at1", "at2">
+        >
+    >
+
