@@ -5,5 +5,11 @@
     "name" : "Encounter",
     "path" : "templates/openEHR-EHR-COMPOSITION.vital_signs.v1.adlt",
     "sha" : "e067c475f80f3b818e1eba2199b7c766c62052a4"
+  }, {
+    "id" : "openEHR-EHR-COMPOSITION.demo2.v1.0.0",
+    "rmType" : "COMPOSITION",
+    "name" : "Encounter",
+    "path" : "templates/openEHR-EHR-COMPOSITION.demo2.v1.adlt",
+    "sha" : "c36cd97817135d4867249ecf3642ef687fa0fa80"
   } ]
 }
