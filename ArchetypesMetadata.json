@@ -216,5 +216,19 @@
     "path" : "archetypes/openEHR-EHR-SECTION.medication.v1.adls",
     "sha" : "d379bcf36aa1293b122d305a3daa87b3647ada0f",
     "languages" : [ "en" ]
+  }, {
+    "id" : "openEHR-EHR-OBSERVATION.demo.v1.0.0",
+    "rmType" : "OBSERVATION",
+    "name" : "demo",
+    "path" : "archetypes/openEHR-EHR-OBSERVATION.demo.v1.adls",
+    "sha" : "73bdf70f7ed8c474216544efc57ecdf9e2858963",
+    "languages" : [ "en" ]
+  }, {
+    "id" : "openEHR-EHR-OBSERVATION.test.v1.0.0",
+    "rmType" : "OBSERVATION",
+    "name" : "test",
+    "path" : "archetypes/openEHR-EHR-OBSERVATION.test.v1.adls",
+    "sha" : "5424f4960784181600a0fd8d132ac85e1dd00305",
+    "languages" : [ "en" ]
   } ]
 }
