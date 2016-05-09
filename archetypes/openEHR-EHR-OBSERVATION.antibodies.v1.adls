@@ -1,0 +1,102 @@
+archetype (adl_version=2.0.4; rm_release=1.0.2)
+    openEHR-EHR-OBSERVATION.antibodies.v1.0.0
+
+language
+    original_language = <[ISO_639-1::en]>
+    
+description
+    copyright = <"">
+    details = <
+        ["en"] = <
+            language = <[ISO_639-1::en]>
+            purpose = <"">
+        >
+    >
+    lifecycle_state = <"unmanaged">
+
+definition
+    OBSERVATION[id1] matches {    -- Antibodies
+        data matches {
+            HISTORY[id2] matches {
+                events matches {
+                    EVENT[id3] matches {    -- Any event
+                        data matches {
+                            ITEM_TREE[id4] matches {
+                                items matches {
+                                    ELEMENT[id7] occurrences matches {0..1} matches {    -- GAD antibodies
+                                        value matches {
+                                            DV_CODED_TEXT[id8] matches {
+                                                defining_code matches {[ac1]}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[id10] occurrences matches {0..1} matches {    -- ICA antibodies
+                                        value matches {
+                                            DV_CODED_TEXT[id11] matches {
+                                                defining_code matches {[ac1]}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[id13] occurrences matches {0..1} matches {    -- IA-2 antibodies
+                                        value matches {
+                                            DV_CODED_TEXT[id14] matches {
+                                                defining_code matches {[ac1]}
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        state matches {
+                            ITEM_TREE[id5] 
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+terminology
+    term_definitions = <
+        ["en"] = <
+            ["id1"] = <
+                text = <"Antibodies">
+                description = <"Antibodies">
+            >
+            ["id3"] = <
+                text = <"Any event">
+                description = <"Any event">
+            >
+            ["id7"] = <
+                text = <"GAD antibodies">
+                description = <"DV_TEXT">
+            >
+            ["at1"] = <
+                text = <"Positive">
+                description = <"Positive">
+            >
+            ["at2"] = <
+                text = <"Negative">
+                description = <"Negative">
+            >
+            ["ac1"] = <
+                text = <"Antibodies">
+                description = <"Antibodies">
+            >
+            ["id10"] = <
+                text = <"ICA antibodies">
+                description = <"DV_TEXT">
+            >
+            ["id13"] = <
+                text = <"IA-2 antibodies">
+                description = <"DV_TEXT">
+            >
+        >
+    >
+    value_sets = <
+        ["ac1"] = <
+            id = <"ac1">
+            members = <"at1", "at2">
+        >
+    >
+
