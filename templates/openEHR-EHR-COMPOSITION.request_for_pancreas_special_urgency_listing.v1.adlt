@@ -47,6 +47,7 @@ definition
             use_archetype OBSERVATION[id0.3, openEHR-EHR-OBSERVATION.ovl-request_for_pancreas_special_urgency_listing-height-001.v1.0.0]
             use_archetype OBSERVATION[id0.4, openEHR-EHR-OBSERVATION.ovl-request_for_pancreas_special_urgency_listing-blood_type-001.v1.0.0]
             use_archetype EVALUATION[id0.5, openEHR-EHR-EVALUATION.ovl-request_for_pancreas_special_urgency_listing-problem_diagnosis-001.v1.0.0]
+            use_archetype OBSERVATION[id0.6, openEHR-EHR-OBSERVATION.ovl-request_for_pancreas_special_urgency_listing-antibodies-001.v1.0.0]
         }
     }
 
@@ -227,6 +228,27 @@ terminology
         ["ac0.1"] = <
             id = <"ac0.1">
             members = <"at0.1", "at0.2", "at0.3">
+        >
+    >
+
+
+---------------------------------------------------------------------------------
+template_overlay
+    openEHR-EHR-OBSERVATION.ovl-request_for_pancreas_special_urgency_listing-antibodies-001.v1.0.0
+
+specialize
+    openEHR-EHR-OBSERVATION.antibodies.v1.0.0
+
+definition
+    OBSERVATION[id1.1]     -- Antibodies
+
+terminology
+    term_definitions = <
+        ["en"] = <
+            ["id1.1"] = <
+                text = <"Antibodies">
+                description = <"Antibodies">
+            >
         >
     >
 
