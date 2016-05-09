@@ -1,0 +1,111 @@
+archetype (adl_version=2.0.4; rm_release=1.0.2)
+    openEHR-EHR-OBSERVATION.blood_type.v1.0.0
+
+language
+    original_language = <[ISO_639-1::en]>
+    
+description
+    copyright = <"">
+    details = <
+        ["en"] = <
+            language = <[ISO_639-1::en]>
+            purpose = <"">
+        >
+    >
+    lifecycle_state = <"unmanaged">
+
+definition
+    OBSERVATION[id1] matches {    -- Blood Type
+        data matches {
+            HISTORY[id2] matches {
+                events matches {
+                    EVENT[id3] matches {    -- Any event
+                        data matches {
+                            ITEM_TREE[id4] matches {
+                                items matches {
+                                    ELEMENT[id7] matches {    -- ABO
+                                        value matches {
+                                            DV_TEXT[id8] 
+                                        }
+                                    }
+                                    ELEMENT[id10] matches {    -- Rhesus
+                                        value matches {
+                                            DV_TEXT[id11] 
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        state matches {
+                            ITEM_TREE[id5] 
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+terminology
+    term_definitions = <
+        ["en"] = <
+            ["id1"] = <
+                text = <"Blood Type">
+                description = <"Blood Type">
+            >
+            ["id3"] = <
+                text = <"Any event">
+                description = <"Any event">
+            >
+            ["id7"] = <
+                text = <"ABO">
+                description = <"DV_TEXT">
+            >
+            ["at1"] = <
+                text = <"A">
+                description = <"A group">
+            >
+            ["at2"] = <
+                text = <"B">
+                description = <"B">
+            >
+            ["at3"] = <
+                text = <"0">
+                description = <"0">
+            >
+            ["at4"] = <
+                text = <"AB">
+                description = <"AB">
+            >
+            ["ac1"] = <
+                text = <"ABO">
+                description = <"Blood group">
+            >
+            ["id10"] = <
+                text = <"Rhesus">
+                description = <"DV_TEXT">
+            >
+            ["at5"] = <
+                text = <"-">
+                description = <"-">
+            >
+            ["at6"] = <
+                text = <"+">
+                description = <"Positive">
+            >
+            ["ac2"] = <
+                text = <"Rhesus">
+                description = <"Rhesus">
+            >
+        >
+    >
+    value_sets = <
+        ["ac1"] = <
+            id = <"ac1">
+            members = <"at1", "at2", "at3", "at4">
+        >
+        ["ac2"] = <
+            id = <"ac2">
+            members = <"at5", "at6">
+        >
+    >
+
