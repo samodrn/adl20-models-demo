@@ -45,6 +45,8 @@ definition
         content matches {
             use_archetype OBSERVATION[id0.2, openEHR-EHR-OBSERVATION.ovl-request_for_pancreas_special_urgency_listing-body_weight-001.v1.0.0]
             use_archetype OBSERVATION[id0.3, openEHR-EHR-OBSERVATION.ovl-request_for_pancreas_special_urgency_listing-height-001.v1.0.0]
+            use_archetype OBSERVATION[id0.4, openEHR-EHR-OBSERVATION.ovl-request_for_pancreas_special_urgency_listing-blood_type-001.v1.0.0]
+            use_archetype EVALUATION[id0.5, openEHR-EHR-EVALUATION.ovl-request_for_pancreas_special_urgency_listing-problem_diagnosis-001.v1.0.0]
         }
     }
 
@@ -139,6 +141,92 @@ terminology
                 text = <"*Height/Length(en)">
                 description = <"*Height, or body length, is measured from crown of head to sole of foot.  Height is measured with the individual in a standing position and body length in a recumbent position. (en)">
             >
+        >
+    >
+
+
+---------------------------------------------------------------------------------
+template_overlay
+    openEHR-EHR-OBSERVATION.ovl-request_for_pancreas_special_urgency_listing-blood_type-001.v1.0.0
+
+specialize
+    openEHR-EHR-OBSERVATION.blood_type.v1.0.0
+
+definition
+    OBSERVATION[id1.1]     -- Blood Type
+
+terminology
+    term_definitions = <
+        ["en"] = <
+            ["id1.1"] = <
+                text = <"Blood Type">
+                description = <"Blood Type">
+            >
+        >
+    >
+
+
+---------------------------------------------------------------------------------
+template_overlay
+    openEHR-EHR-EVALUATION.ovl-request_for_pancreas_special_urgency_listing-problem_diagnosis-001.v1.0.0
+
+specialize
+    openEHR-EHR-EVALUATION.problem_diagnosis.v1.0.0
+
+definition
+    EVALUATION[id1.1]     -- Problem/Diagnosis
+
+terminology
+    term_definitions = <
+        ["en"] = <
+            ["id1.1"] = <
+                text = <"Problem/Diagnosis">
+                description = <"Any health care condition which may impact on to mental, physical health of patient">
+            >
+            ["at0.1"] = <
+                text = <"Diabetes Type 1">
+                description = <"Diabetes Type 1">
+            >
+            ["at0.2"] = <
+                text = <"Diabetes Type II">
+                description = <"Diabetes Type II">
+            >
+            ["at0.3"] = <
+                text = <"Other">
+                description = <"Other">
+            >
+            ["ac0.1"] = <
+                text = <"Primary Disease">
+                description = <"Primary Disease">
+            >
+        >
+        ["sl"] = <
+            ["id1.1"] = <
+                text = <"Problem / Diagnoza">
+                description = <"Vsa stanja pacienta, ki vplivajo na njegovo zdravje">
+            >
+            ["at0.1"] = <
+                text = <"Diabetes Type 1 (en)">
+                description = <"Diabetes Type 1 (en)">
+            >
+            ["at0.2"] = <
+                text = <"Diabetes Type II (en)">
+                description = <"Diabetes Type II (en)">
+            >
+            ["at0.3"] = <
+                text = <"Other (en)">
+                description = <"Other (en)">
+            >
+            ["ac0.1"] = <
+                text = <"Primary Disease (en)">
+                description = <"Primary Disease (en)">
+            >
+        >
+    >
+    value_sets = <
+        ["ac0.1"] = <
+            id = <"ac0.1">
+            members = <"at0.1", "at0.2", "at0.3">
         >
     >
 
