@@ -1,0 +1,144 @@
+template (adl_version=2.0.5; rm_release=1.0.2; generated)
+    openEHR-EHR-COMPOSITION.request_for_pancreas_special_urgency_listing.v1.0.0
+
+specialize
+    openEHR-EHR-COMPOSITION.encounter.v1.0.0
+
+language
+    original_language = <[ISO_639-1::en]>
+    translations = <
+        ["sl"] = <
+            author = <
+                ["name"] = <"?">
+            >
+            language = <[ISO_639-1::sl]>
+        >
+    >
+    
+description
+    copyright = <"copyright (c) 2010 openEHR Foundation">
+    details = <
+        ["en"] = <
+            keywords = <"progress", "note", "encounter">
+            language = <[ISO_639-1::en]>
+            misuse = <"">
+            purpose = <"Record of encounter as a progress note.">
+            use = <"">
+        >
+        ["sl"] = <
+            keywords = <"progress", "note", "encounter">
+            language = <[ISO_639-1::sl]>
+            misuse = <"">
+            purpose = <"Record of encounter as a progress note.">
+            use = <"">
+        >
+    >
+    lifecycle_state = <"unmanaged">
+    original_author = <
+        ["organisation"] = <"Ocean Informatics">
+        ["name"] = <"Thomas Beale">
+        ["date"] = <"2005-10-10">
+    >
+
+definition
+    COMPOSITION[id1.1] matches {    -- Encounter
+        content matches {
+            use_archetype OBSERVATION[id0.2, openEHR-EHR-OBSERVATION.ovl-request_for_pancreas_special_urgency_listing-body_weight-001.v1.0.0]
+            use_archetype OBSERVATION[id0.3, openEHR-EHR-OBSERVATION.ovl-request_for_pancreas_special_urgency_listing-height-001.v1.0.0]
+        }
+    }
+
+terminology
+    term_definitions = <
+        ["en"] = <
+            ["id1.1"] = <
+                text = <"Encounter">
+                description = <"Generic encounter or progress note composition">
+            >
+        >
+        ["sl"] = <
+            ["id1.1"] = <
+                text = <"Encounter">
+                description = <"Generic encounter or progress note composition">
+            >
+        >
+    >
+
+
+---------------------------------------------------------------------------------
+template_overlay
+    openEHR-EHR-OBSERVATION.ovl-request_for_pancreas_special_urgency_listing-body_weight-001.v1.0.0
+
+specialize
+    openEHR-EHR-OBSERVATION.body_weight.v1.0.0
+
+definition
+    OBSERVATION[id1.1]     -- Telesna teža 
+
+terminology
+    term_definitions = <
+        ["sl"] = <
+            ["id1.1"] = <
+                text = <"Telesna teža ">
+                description = <"Merjenje telesne teže posameznega pacienta">
+            >
+        >
+        ["nl"] = <
+            ["id1.1"] = <
+                text = <"Lichaamsgewicht">
+                description = <"Meting van het lichaamsgewicht van een individu.">
+            >
+        >
+        ["en"] = <
+            ["id1.1"] = <
+                text = <"Body weight">
+                description = <"Measurement of the body weight of an individual.">
+            >
+        >
+        ["de"] = <
+            ["id1.1"] = <
+                text = <"Körpergewicht">
+                description = <"Messung des Körpergewichts eines Individuums.">
+            >
+        >
+    >
+
+
+---------------------------------------------------------------------------------
+template_overlay
+    openEHR-EHR-OBSERVATION.ovl-request_for_pancreas_special_urgency_listing-height-001.v1.0.0
+
+specialize
+    openEHR-EHR-OBSERVATION.height.v1.0.0
+
+definition
+    OBSERVATION[id1.1]     -- Višina/dolžina
+
+terminology
+    term_definitions = <
+        ["sl"] = <
+            ["id1.1"] = <
+                text = <"Višina/dolžina">
+                description = <"Višina/dolžina pacienta, izmerjena od vrha glave do podplatov na nogah">
+            >
+        >
+        ["nl"] = <
+            ["id1.1"] = <
+                text = <"Lengte">
+                description = <"De lichaamslengte wordt gemeten vanaf de kruin van het hoofd tot en met de voetzool. In het engelse taaldomein wordt er verschil gemaakt tussen hoogte (height) en lengte (length), waarbij hoogte staande gemeten wordt en lengte liggend.">
+            >
+        >
+        ["en"] = <
+            ["id1.1"] = <
+                text = <"Height/Length">
+                description = <"Height, or body length, is measured from crown of head to sole of foot.  Height is measured with the individual in a standing position and body length in a recumbent position. ">
+            >
+        >
+        ["de"] = <
+            ["id1.1"] = <
+                text = <"*Height/Length(en)">
+                description = <"*Height, or body length, is measured from crown of head to sole of foot.  Height is measured with the individual in a standing position and body length in a recumbent position. (en)">
+            >
+        >
+    >
+
