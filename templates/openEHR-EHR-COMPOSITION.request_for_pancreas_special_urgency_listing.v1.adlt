@@ -41,7 +41,7 @@ description
     >
 
 definition
-    COMPOSITION[id1.1] matches {    -- Encounter
+    COMPOSITION[id1.1] matches {    -- Request for Pancreas Special Urgency Listing
         content matches {
             use_archetype OBSERVATION[id0.2, openEHR-EHR-OBSERVATION.ovl-request_for_pancreas_special_urgency_listing-body_weight-001.v1.0.0]
             use_archetype OBSERVATION[id0.3, openEHR-EHR-OBSERVATION.ovl-request_for_pancreas_special_urgency_listing-height-001.v1.0.0]
@@ -55,7 +55,7 @@ terminology
     term_definitions = <
         ["en"] = <
             ["id1.1"] = <
-                text = <"Encounter">
+                text = <"Request for Pancreas Special Urgency Listing">
                 description = <"Generic encounter or progress note composition">
             >
         >
