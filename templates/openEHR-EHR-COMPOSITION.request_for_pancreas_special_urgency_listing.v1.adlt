@@ -76,7 +76,33 @@ specialize
     openEHR-EHR-OBSERVATION.body_weight.v1.0.0
 
 definition
-    OBSERVATION[id1.1]     -- Telesna teža 
+    OBSERVATION[id1.1] matches {    -- Telesna teža 
+        /data[id3]/events matches {
+            EVENT[id4] matches {
+                /data[id2]/items matches {
+                    ELEMENT[id25.1] occurrences matches {0} matches {    -- Opombe
+                        value matches {
+                            DV_TEXT[id28.1] 
+                        }
+                    }
+                }
+                /state[id9]/items matches {
+                    ELEMENT[id10.1] occurrences matches {0} matches {    -- Oblečen
+                        value matches {
+                            DV_CODED_TEXT[id29.1] matches {
+                                defining_code matches {[ac1; at12]}
+                            }
+                        }
+                    }
+                    ELEMENT[id26.1] occurrences matches {0} matches {    -- Dodatna navodila
+                        value matches {
+                            DV_TEXT[id30.1] 
+                        }
+                    }
+                }
+            }
+        }
+    }
 
 terminology
     term_definitions = <
@@ -85,11 +111,35 @@ terminology
                 text = <"Telesna teža ">
                 description = <"Merjenje telesne teže posameznega pacienta">
             >
+            ["id25.1"] = <
+                text = <"Opombe">
+                description = <"Opombe">
+            >
+            ["id10.1"] = <
+                text = <"Oblečen">
+                description = <"Ali je pacient oblečen?">
+            >
+            ["id26.1"] = <
+                text = <"Dodatna navodila">
+                description = <"Dodatna navodila">
+            >
         >
         ["nl"] = <
             ["id1.1"] = <
                 text = <"Lichaamsgewicht">
                 description = <"Meting van het lichaamsgewicht van een individu.">
+            >
+            ["id25.1"] = <
+                text = <"Opmerking">
+                description = <"Opmerking over de gewichts meting.">
+            >
+            ["id10.1"] = <
+                text = <"Hoeveelheid kleding">
+                description = <"Beschrijving van de hoeveelheid kleding van de persoon, op het moment van wegen.">
+            >
+            ["id26.1"] = <
+                text = <"BeÏnvloedende factoren">
+                description = <"Registreer eventuele problemen of factoren die van invloed kunnen zijn op de meting van het lichaamsgewicht bijvoorbeeld timing in de menstruele cyclus, timing van de recente stoelgang of het noteren van een amputatie">
             >
         >
         ["en"] = <
@@ -97,11 +147,35 @@ terminology
                 text = <"Body weight">
                 description = <"Measurement of the body weight of an individual.">
             >
+            ["id25.1"] = <
+                text = <"Comment">
+                description = <"Comment about the measurement of weight.">
+            >
+            ["id10.1"] = <
+                text = <"State of Dress">
+                description = <"Description of the state of dress of the person at the time of weighing.">
+            >
+            ["id26.1"] = <
+                text = <"Confounding Factors">
+                description = <"Record any issues or factors that may impact on the measurement of body weight eg timing in menstrual cycle, timing of recent bowel motion or noting of amputation.">
+            >
         >
         ["de"] = <
             ["id1.1"] = <
                 text = <"Körpergewicht">
                 description = <"Messung des Körpergewichts eines Individuums.">
+            >
+            ["id25.1"] = <
+                text = <"Kommentar">
+                description = <"Kommentar über die Messung des Gewichts.">
+            >
+            ["id10.1"] = <
+                text = <"Bekleidung">
+                description = <"Beschreibung der Bekleidung zum Zeitpunkt der Messung.">
+            >
+            ["id26.1"] = <
+                text = <"Störfaktoren">
+                description = <"Zur Dokumentation von Faktoren, die einen Einfluss auf die Messung des Körpergewichts haben können, z.B. Zeitpunkt in der Menstruationsperiode, Zeitpunkt des letzten Stuhlgangs, durchgeführte Amputationen.">
             >
         >
     >
@@ -115,7 +189,33 @@ specialize
     openEHR-EHR-OBSERVATION.height.v1.0.0
 
 definition
-    OBSERVATION[id1.1]     -- Višina/dolžina
+    OBSERVATION[id1.1] matches {    -- Višina/dolžina
+        /data[id2]/events matches {
+            EVENT[id3] matches {
+                /data[id4]/items matches {
+                    ELEMENT[id19.1] occurrences matches {0} matches {    -- Opombe
+                        value matches {
+                            DV_TEXT[id22.1] 
+                        }
+                    }
+                }
+                /state[id14]/items matches {
+                    ELEMENT[id15.1] occurrences matches {0} matches {    -- Pozicija 
+                        value matches {
+                            DV_CODED_TEXT[id23.1] matches {
+                                defining_code matches {[ac1; at17]}
+                            }
+                        }
+                    }
+                    ELEMENT[id20.1] occurrences matches {0} matches {    -- Dodatna navodila
+                        value matches {
+                            DV_TEXT[id24.1] 
+                        }
+                    }
+                }
+            }
+        }
+    }
 
 terminology
     term_definitions = <
@@ -124,11 +224,35 @@ terminology
                 text = <"Višina/dolžina">
                 description = <"Višina/dolžina pacienta, izmerjena od vrha glave do podplatov na nogah">
             >
+            ["id19.1"] = <
+                text = <"Opombe">
+                description = <"Opombe">
+            >
+            ["id15.1"] = <
+                text = <"Pozicija ">
+                description = <"Pozicija pacienta, ko se izvaja meritev">
+            >
+            ["id20.1"] = <
+                text = <"Dodatna navodila">
+                description = <"Dodatna navodila">
+            >
         >
         ["nl"] = <
             ["id1.1"] = <
                 text = <"Lengte">
                 description = <"De lichaamslengte wordt gemeten vanaf de kruin van het hoofd tot en met de voetzool. In het engelse taaldomein wordt er verschil gemaakt tussen hoogte (height) en lengte (length), waarbij hoogte staande gemeten wordt en lengte liggend.">
+            >
+            ["id19.1"] = <
+                text = <"Opmerking">
+                description = <"Opmerking over de meting van de lichaamslengte.">
+            >
+            ["id15.1"] = <
+                text = <"Positie">
+                description = <"Positie tijdens de meting, van de gemeten persoon.">
+            >
+            ["id20.1"] = <
+                text = <"Beïnvloedende factoren">
+                description = <"Vermeld ieder probleem of feit die de meting van de lengte beïnvloedt, b.v. notitie maken van een amputatie.">
             >
         >
         ["en"] = <
@@ -136,11 +260,36 @@ terminology
                 text = <"Height/Length">
                 description = <"Height, or body length, is measured from crown of head to sole of foot.  Height is measured with the individual in a standing position and body length in a recumbent position. ">
             >
+            ["id19.1"] = <
+                text = <"Comment">
+                description = <"Comment about the measurement of body height/length.">
+            >
+            ["id15.1"] = <
+                text = <"Position">
+                description = <"Position of individual when measured.  
+">
+            >
+            ["id20.1"] = <
+                text = <"Confounding factors">
+                description = <"Record any issues or factors that may impact on the measurement of body height/length eg noting of amputation.">
+            >
         >
         ["de"] = <
             ["id1.1"] = <
                 text = <"*Height/Length(en)">
                 description = <"*Height, or body length, is measured from crown of head to sole of foot.  Height is measured with the individual in a standing position and body length in a recumbent position. (en)">
+            >
+            ["id19.1"] = <
+                text = <"*Comment(en)">
+                description = <"*Comment about the measurement of body height/length.(en)">
+            >
+            ["id15.1"] = <
+                text = <"*New element(en)">
+                description = <"**(en)">
+            >
+            ["id20.1"] = <
+                text = <"*Confounding factors(en)">
+                description = <"*Record any issues or factors that may impact on the measurement of body height/length eg noting of amputation.(en)">
             >
         >
     >
@@ -175,7 +324,99 @@ specialize
     openEHR-EHR-EVALUATION.problem_diagnosis.v1.0.0
 
 definition
-    EVALUATION[id1.1]     -- Problem/Diagnosis
+    EVALUATION[id1.1] matches {    -- Problem/Diagnosis
+        /data[id2]/items matches {
+            ELEMENT[id11.1] occurrences matches {0} matches {    -- Date of onset
+                value matches {
+                    DV_DATE_TIME[id80.1] 
+                }
+            }
+            ELEMENT[id38.1] occurrences matches {0} matches {    -- Age of onset
+                value matches {
+                    DV_DURATION[id81.1] 
+                }
+            }
+            CLUSTER[id19.1] occurrences matches {0} matches {    -- Occurrence Summary
+                items matches {
+                    ELEMENT[id26.1] occurrences matches {0} matches {    -- Number
+                        value matches {
+                            DV_COUNT[id82.1] matches {
+                                magnitude matches {|>=1|}
+                            }
+                        }
+                    }
+                    ELEMENT[id20.1] occurrences matches {0} matches {    -- Frequency
+                        value matches {
+                            DV_QUANTITY[id83.1] matches {
+                                property matches {[at80]}
+                                units matches {"/d", "/yr", "/h", "/wk", "/mo", "/min"}
+                            }
+                        }
+                    }
+                    ELEMENT[id21.1] occurrences matches {0} matches {    -- Last occurrence
+                        value matches {
+                            DV_DATE[id84.1] 
+                        }
+                    }
+                    ELEMENT[id73.1] occurrences matches {0} matches {    -- Description
+                        value matches {
+                            DV_TEXT[id85.1] 
+                        }
+                    }
+                    ELEMENT[id74.1] occurrences matches {0} matches {    -- Link to previous occurrence
+                        value matches {
+                            DV_URI[id86.1] 
+                        }
+                    }
+                }
+            }
+            ELEMENT[id16.1] occurrences matches {0} matches {    -- Causative Agent
+                value matches {
+                    DV_TEXT[id87.1] 
+                }
+            }
+            CLUSTER[id27.1] occurrences matches {0} matches {    -- Related items
+                items matches {
+                    ELEMENT[id29.1] occurrences matches {0} matches {    -- Related items
+                        value matches {
+                            DV_CODED_TEXT[id88.1] matches {
+                                defining_code matches {[ac3]}
+                            }
+                        }
+                    }
+                    ELEMENT[id57.1] occurrences matches {0} matches {    -- Relationship type
+                        value matches {
+                            DV_CODED_TEXT[id89.1] matches {
+                                defining_code matches {[ac4]}
+                            }
+                        }
+                    }
+                }
+            }
+            ELEMENT[id31.1] occurrences matches {0} matches {    -- Date of resolution/remission
+                value matches {
+                    DV_DATE_TIME[id90.1] 
+                }
+            }
+            ELEMENT[id32.1] occurrences matches {0} matches {    -- Age at ressolution/remission
+                value matches {
+                    DV_DURATION[id91.1] 
+                }
+            }
+            ELEMENT[id70.1] occurrences matches {0} matches {    -- Comment
+                value matches {
+                    DV_TEXT[id92.1] 
+                }
+            }
+        }
+        /protocol[id75]/items matches {
+            ELEMENT[id76.1] occurrences matches {0} matches {    -- Link to supporting medical documentation
+                value matches {
+                    DV_URI[id93.1] 
+                }
+            }
+        }
+    }
 
 terminology
     term_definitions = <
@@ -200,6 +441,70 @@ terminology
                 text = <"Primary Disease">
                 description = <"Primary Disease">
             >
+            ["id11.1"] = <
+                text = <"Date of onset">
+                description = <"Estimated date the problem/diagnoses began">
+            >
+            ["id38.1"] = <
+                text = <"Age of onset">
+                description = <"The age of the person when clinician assess the problem/diagnose">
+            >
+            ["id19.1"] = <
+                text = <"Occurrence Summary">
+                description = <"Summary information about occurrence or exacerbations.">
+            >
+            ["id26.1"] = <
+                text = <"Number">
+                description = <"Cumulative number of occurrances or exacerbation">
+            >
+            ["id20.1"] = <
+                text = <"Frequency">
+                description = <"The frequency of occurrences or excerbation of the problem/diagnoses">
+            >
+            ["id21.1"] = <
+                text = <"Last occurrence">
+                description = <"The date of last occurrance or exacerbation">
+            >
+            ["id73.1"] = <
+                text = <"Description">
+                description = <"Description">
+            >
+            ["id74.1"] = <
+                text = <"Link to previous occurrence">
+                description = <"Link to previous occurrence">
+            >
+            ["id16.1"] = <
+                text = <"Causative Agent">
+                description = <"The phenomenon, substance, or organisem that is considered to be cause">
+            >
+            ["id27.1"] = <
+                text = <"Related items">
+                description = <"Further problems, diagnoses, procedures aotr events that related to th eproblem/diagnose">
+            >
+            ["id29.1"] = <
+                text = <"Related items">
+                description = <"Further problems, diagnoses, procedures aotr events that related to th eproblem/diagnose">
+            >
+            ["id57.1"] = <
+                text = <"Relationship type">
+                description = <"The type of relationship that this problem/diagnose has to the related itam">
+            >
+            ["id31.1"] = <
+                text = <"Date of resolution/remission">
+                description = <"The date that problem/diagnose resolved or went to remission">
+            >
+            ["id32.1"] = <
+                text = <"Age at ressolution/remission">
+                description = <"The age of person at the time of ressolution">
+            >
+            ["id70.1"] = <
+                text = <"Comment">
+                description = <"Any comment about problem/diagnose">
+            >
+            ["id76.1"] = <
+                text = <"Link to supporting medical documentation">
+                description = <"Link to supporting mediacl documentation">
+            >
         >
         ["sl"] = <
             ["id1.1"] = <
@@ -221,6 +526,70 @@ terminology
             ["ac0.1"] = <
                 text = <"Primary Disease (en)">
                 description = <"Primary Disease (en)">
+            >
+            ["id11.1"] = <
+                text = <"Datum začetka">
+                description = <"Okvirni datum nastanka problema">
+            >
+            ["id38.1"] = <
+                text = <"Starost pacienta ob nastanku problema">
+                description = <"Starost pacienta ob astanku problema">
+            >
+            ["id19.1"] = <
+                text = <"Opis poslabšanja">
+                description = <"Podatki o ponovitvah oz, poslabšanjih">
+            >
+            ["id26.1"] = <
+                text = <"Številka">
+                description = <"Število ponovitev">
+            >
+            ["id20.1"] = <
+                text = <"Pogostost">
+                description = <"Pogostost poslabšanj">
+            >
+            ["id21.1"] = <
+                text = <"Datum zadnjega">
+                description = <"Kdaj bilo zadnje poslabšanje?">
+            >
+            ["id73.1"] = <
+                text = <"Opis">
+                description = <"Opis problema">
+            >
+            ["id74.1"] = <
+                text = <"Prejšnje ponovitve">
+                description = <"Povezava s prejšnjimi ponovitvami">
+            >
+            ["id16.1"] = <
+                text = <"Vzrok">
+                description = <"Vzrok za nastanek problema">
+            >
+            ["id27.1"] = <
+                text = <"V povezavi ">
+                description = <"*Further problems, diagnoses, procedures aotr events that related to th eproblem/diagnose(en)">
+            >
+            ["id29.1"] = <
+                text = <"V povezavi z">
+                description = <"*Further problems, diagnoses, procedures aotr events that related to th eproblem/diagnose(en)">
+            >
+            ["id57.1"] = <
+                text = <"*Relationship type(en)">
+                description = <"*The type of relationship that this problem/diagnose has to the related itam(en)">
+            >
+            ["id31.1"] = <
+                text = <"Ni več aktualna od">
+                description = <"Datum od katerega ta diagnoza ni več aktualna oz. problem ni več aktualen">
+            >
+            ["id32.1"] = <
+                text = <"Starost pacienta ob razrešitvi problema">
+                description = <"Staros pacienta ob razrešitvi problema">
+            >
+            ["id70.1"] = <
+                text = <"Opombe">
+                description = <"Dodatne opombe">
+            >
+            ["id76.1"] = <
+                text = <"Medicinska dokumentacija">
+                description = <"Povezava z dodatno medicinsko dokumentacijo">
             >
         >
     >
