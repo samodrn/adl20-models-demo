@@ -230,5 +230,19 @@
     "path" : "archetypes/openEHR-EHR-OBSERVATION.test.v1.adls",
     "sha" : "5424f4960784181600a0fd8d132ac85e1dd00305",
     "languages" : [ "en" ]
+  }, {
+    "id" : "openEHR-EHR-OBSERVATION.antibodies.v1.0.0",
+    "rmType" : "OBSERVATION",
+    "name" : "Antibodies",
+    "path" : "archetypes/openEHR-EHR-OBSERVATION.antibodies.v1.adls",
+    "sha" : "ed5d6399f26dae2c14ea28906a177694c25e4014",
+    "languages" : [ "en" ]
+  }, {
+    "id" : "openEHR-EHR-OBSERVATION.blood_type.v1.0.0",
+    "rmType" : "OBSERVATION",
+    "name" : "Blood Type",
+    "path" : "archetypes/openEHR-EHR-OBSERVATION.blood_type.v1.adls",
+    "sha" : "b95a4094b861ed98995265f01a5e6c3293669eaf",
+    "languages" : [ "en" ]
   } ]
 }
