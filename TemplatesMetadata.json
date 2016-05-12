@@ -11,5 +11,17 @@
     "name" : "Encounter",
     "path" : "templates/openEHR-EHR-COMPOSITION.demo2.v1.adlt",
     "sha" : "c36cd97817135d4867249ecf3642ef687fa0fa80"
+  }, {
+    "id" : "openEHR-EHR-COMPOSITION.eurtransplant_demo.v1.0.0",
+    "rmType" : "COMPOSITION",
+    "name" : "Eurotransplant demo",
+    "path" : "templates/openEHR-EHR-COMPOSITION.eurtransplant_demo.v1.adlt",
+    "sha" : "04c28bcfe1cf0b8acf643ee538d3fa9b84c8af01"
+  }, {
+    "id" : "openEHR-EHR-COMPOSITION.request_for_pancreas_special_urgency_listing.v1.0.0",
+    "rmType" : "COMPOSITION",
+    "name" : "Request for Pancreas Special Urgency Listing",
+    "path" : "templates/openEHR-EHR-COMPOSITION.request_for_pancreas_special_urgency_listing.v1.adlt",
+    "sha" : "204b610ed161ecd6d00d4f1d1428efba7216e10e"
   } ]
 }
